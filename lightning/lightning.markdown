@@ -13,3 +13,4 @@ if (errors && Array.isArray(errors) && errors.length > 0) {
 // Display the message
 console.error(message);
 ```
+

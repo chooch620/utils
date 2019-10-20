@@ -12,3 +12,27 @@ static void checkThatInsertionFailed(Database.SaveResult dmlResult, String messa
     System.assertEquals(message, dmlResult.getErrors()[0].getMessage());
 }
 ```
+
+
+## Trigger
+
+Trigger Context Variables
+if (Trigger.isBefore) {
+    if (Trigger.isInsert) {
+
+    } else if (Trigger.isUpdate) {
+        
+    } else if (Trigger.isDelete) {
+
+    } else
+} else {
+    if (Trigger.isInsert) {
+
+    } else if (Trigger.isUpdate) {
+
+    } else if (Trigger.isDelete) {
+
+    } else { // undelete
+
+    }
+}
