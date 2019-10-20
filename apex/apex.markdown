@@ -17,6 +17,8 @@ static void checkThatInsertionFailed(Database.SaveResult dmlResult, String messa
 ## Trigger
 
 Trigger Context Variables
+
+```Apex
 if (Trigger.isBefore) {
     if (Trigger.isInsert) {
 
@@ -36,3 +38,4 @@ if (Trigger.isBefore) {
 
     }
 }
+```
