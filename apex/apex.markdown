@@ -11,3 +11,4 @@ static void checkThatInsertionFailed(Database.SaveResult dmlResult, String messa
     // This error should say This room will be occupied during that time. Please choose another.
     System.assertEquals(message, dmlResult.getErrors()[0].getMessage());
 }
+```
