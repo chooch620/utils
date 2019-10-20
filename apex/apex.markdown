@@ -22,9 +22,9 @@ if (Trigger.isBefore) {
 
     } else if (Trigger.isUpdate) {
         
-    } else if (Trigger.isDelete) {
+    } else { // delete
 
-    } else
+    }
 } else {
     if (Trigger.isInsert) {
 
