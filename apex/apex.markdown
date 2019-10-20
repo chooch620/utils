@@ -7,6 +7,6 @@
     System.assert(!dmlResult.isSuccess());
     // If it's stopped correctly, we should also receive an error
     System.assert(dmlResult.getErrors().size() > 0);
-    // This error should say `This room will be occupied during that time. Please choose another.`
+    // This error should say This room will be occupied during that time. Please choose another.
     System.assertEquals(message, dmlResult.getErrors()[0].getMessage());
 }`
