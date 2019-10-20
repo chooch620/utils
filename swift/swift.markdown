@@ -25,3 +25,24 @@ if let email = defaults.object(forKey: "emailAddress") as? String,
         // do something
 }
 ```
+
+
+## Firebase
+
+Update a Firebase document.
+
+```swift
+let db = Firestore.firestore()
+func updateDocument(documentId: String, pathToDocument: String, fieldsToUpdate: [String:Any]) {
+    let document = db.collection(pathToDocument).document(documentId)
+    
+    document.updateData(fieldsToUpdate) {
+        err in
+        if let err = err {
+            print("Error updating document: \(err)")
+        } else {
+            print("Document successfully updated")
+        }
+    }
+}
+```
