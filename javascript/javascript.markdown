@@ -69,3 +69,25 @@ function sendNotificationToDevice(deviceId, notificationContent) {
     admin.messaging().sendToDevice(deviceId, notificationContent);
 }
 ```
+
+Allows us to nicely format our cloud function folders, with scale in mind.
+
+```javascript
+/**
+ * 
+ *  Loads all `.f.js` files.
+ *  Exports a cloud function matching the file name
+ * 
+ *  See: https://github.com/firebase/functions-samples/issues/170#issuecomment-325118145
+ *       https://codeburst.io/organizing-your-firebase-cloud-functions-67dc17b3b0da
+ *       
+ */
+const files = glob.sync('./**/*.f.js', { cwd: __dirname, ignore: './node_modules/**'});
+for(let f=0,fl=files.length; f<fl; f++){
+  const file = files[f];
+  const functionName = camelCase(file.slice(0, -5).split('/').join('_')); // Strip off '.f.js'
+  if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === functionName) {
+    exports[functionName] = require(file);
+  }
+}
+```
