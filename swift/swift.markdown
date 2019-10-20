@@ -61,7 +61,7 @@ class MyCustomVCTests: XCTestCase {
     override func setup() {
         storyboard = UIStoryboard(name: "Storyboard Name", bundle: nil) // Replace Storyboard Name
         viewController = storyboard.instantiateViewController(withIdentifier: "View Controller") as? MyCustomVC // Replace View Controller and MyCustomVC
-        let _ = viewController.view
+        let _ = viewController.view // This will trigger viewDidLoad() 
     }
 }
 ```
