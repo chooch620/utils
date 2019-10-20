@@ -46,3 +46,22 @@ func updateDocument(documentId: String, pathToDocument: String, fieldsToUpdate: 
     }
 }
 ```
+
+## Testing
+
+Basic setup for creating a mock View Controller to test.
+
+```swift
+class MyCustomVCTests: XCTestCase {
+    
+    var appDelegate: AppDelegate?
+    var storyboard : UIStoryboard?
+    var viewController : MyCustomVC? // Replace MyCustomVC with the View Controller you are testing.
+    
+    override func setup() {
+        storyboard = UIStoryboard(name: "Storyboard Name", bundle: nil) // Replace Storyboard Name
+        viewController = storyboard.instantiateViewController(withIdentifier: "View Controller") as? MyCustomVC // Replace View Controller and MyCustomVC
+        let _ = viewController.view
+    }
+}
+```
