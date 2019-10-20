@@ -39,3 +39,17 @@ if (Trigger.isBefore) {
     }
 }
 ```
+
+addError() generic method - I'd put these within a Utility class so that you may call them from others.
+
+```Apex
+static void preventDMLOperation(List<sObject> recordsToDeny, String message) {
+    for (sObject record: recordsToDeny) {
+        preventDMLOperation(record,  message);
+    }
+}
+
+static void preventDMLOperation(sObject recordToDeny, String message) {
+    recordToDeny.addError(message);
+}
+```
