@@ -1,6 +1,6 @@
 ## Testing
 
-### When a Trigger prevents a record from being inserted, there should be a message associate with it.
+When a Trigger prevents a record from being inserted, there should be a message associate with it.
 
 ```Apex
 static void checkThatInsertionFailed(Database.SaveResult dmlResult, String message) {
