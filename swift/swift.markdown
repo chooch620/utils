@@ -69,6 +69,6 @@ class MyCustomVCTests: XCTestCase {
 Trigger the initialization of the UI elements when testing.
 
 ```swift
-        viewController.beginAppearanceTransition(true, animated: false)
-        viewController.endAppearanceTransition()
+    viewController.beginAppearanceTransition(true, animated: false)
+    viewController.endAppearanceTransition()
 ```
